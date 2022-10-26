@@ -50,9 +50,7 @@ class MtCaptcha {
         $this->modx = &$modx;
         $this->namespace = $this->getOption('namespace', $options, $this->namespace);
 
-        //todo
-        $this->api_key = $this->modx->getOption('easycart.api_key');
-        $this->shop_id = $this->modx->getOption('easycart.shop_id');
+        $this->privatekey = $this->modx->getOption('mtcaptcha.privatekey');
 
         $corePath = $this->getOption('core_path', $options, $this->modx->getOption('core_path') . 'components/' . $this->namespace . '/');
         $assetsPath = $this->getOption('assets_path', $options, $this->modx->getOption('assets_path') . 'components/' . $this->namespace . '/');
@@ -125,7 +123,7 @@ class MtCaptcha {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://service.mtcaptcha.com/mtcv1/api/checktoken?privatekey=MTPrivat-0UrXDXNzn-iq1k7KiQjbb3fZzx0s9mPUFbDqkB8cTnqqKcDzQ8O0iQK6Scu6&token=' . $token,
+            CURLOPT_URL => 'https://service.mtcaptcha.com/mtcv1/api/checktoken?privatekey=' . $this->privatkey . '&token=' . $token,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -145,7 +143,7 @@ class MtCaptcha {
     // get error message
     public function getErrorMessage($codes)
     {
-        return $codes[0];
+        return $this->modx->lexicon('mtcaptcha.error') . ' (' . $codes[0] . ')';
     }
 
 }

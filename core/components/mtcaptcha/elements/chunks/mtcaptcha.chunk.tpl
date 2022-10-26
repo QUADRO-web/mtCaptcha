@@ -10,4 +10,4 @@
 
 <div class="mtcaptcha"></div>
 
-[[!+fi.error.mtcaptcha:notempty=`<div>[[%mtcaptcha.error]] ([[!+fi.error.mtcaptcha]])</div>`]]
+[[!+fi.error.mtcaptcha:notempty=`<div>[[!+fi.error.mtcaptcha]]</div>`]]

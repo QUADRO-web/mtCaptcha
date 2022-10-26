@@ -24,6 +24,11 @@
 				"key": "sitekey",
 				"area": "connection",
 				"value": ""
+			},
+			{
+				"key": "privatkey",
+				"area": "connection",
+				"value": ""
 			}
 		],
 		"actions": [],
