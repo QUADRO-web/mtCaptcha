@@ -123,7 +123,7 @@ class MtCaptcha {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://service.mtcaptcha.com/mtcv1/api/checktoken?privatekey=' . $this->privatkey . '&token=' . $token,
+            CURLOPT_URL => 'https://service.mtcaptcha.com/mtcv1/api/checktoken?privatekey=' . $this->privatekey . '&token=' . $token,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
